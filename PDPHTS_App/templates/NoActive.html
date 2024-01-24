@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Speedy Support - No Active Ticket </title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/NoActive.css' %}"></link>
+</head>
+<body>
+ <div class="titlebar">
+  <img src="/static/img/Logo.jpeg" class="logo"> 
+  <ul>
+    <li><a href="/openticket/openticket/">OPEN TICKET</a></li>
+    <li><a href="/active_ticket/active_ticket/">ACTIVE TICKET</a></li>
+    <li><a href="/closed_ticket/closed_ticket/">CLOSED TICKET</a></li>
+    <li><a href="/contact/contact/">CONTACT</a></li>
+    <li><a href="/welcome/welcome/">LOGOUT</a></li>
+  </ul>
+ </div>
+ <div class="background"><br><br><br><br><br><br><br><br>
+  <div class="formbox"><br>
+    <center><h2>NO ACTIVE TICKET</h2><br><br></center>
+    {% csrf_token %}
+    {% for item in data2 %}
+     <p>Dear {{ item.name }}, You are seeing this page because you have no active tickets currently. To open a new ticket, login to your account by entering your email id - {{ item.email }} and password, to create one.<br><br><br></p>
+    {% endfor %}
+  </div>
+ </div>
+</body>
+</html>

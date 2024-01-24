@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Speedy Support - No Addressable Tickets </title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/NoClosable.css' %}"></link>
+</head>
+<body>
+ <div class="titlebar">
+  <img src="/static/img/Logo.jpeg" class="logo"> 
+  <ul>
+    <li><a href="/responder/responder/">ACTIVE TICKET</a></li>
+    <li><a href="/closeticket/closeticket/">CLOSE TICKET</a></li>
+    <li><a href="/contact/contact/">CONTACT</a></li>
+    <li><a href="/welcome/welcome/">LOGOUT</a></li>
+  </ul>
+ </div>
+ <div class="background"><br><br><br><br><br><br><br><br>
+  <div class="formbox"><br>
+    <center><h2>NO ACTIVE TICKETS TO ADDRESS OR TO CLOSE</h2><br><br></center>
+    {% csrf_token %}
+    {% for item in data2 %}
+     <p>Dear RESPONDER, You are seeing this page because you have no active tickets to address or to close currently. To view the active tickets and to close them after addressing the problem, login to your account by entering your email id - {{ item.email }} and password.<br><br><br></p>
+    {% endfor %}
+  </div>
+ </div>
+</body>
+</html>

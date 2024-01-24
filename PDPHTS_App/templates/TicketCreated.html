@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Speedy Support - Ticket Created </title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/Ticketcreated.css' %}"></link>
+</head>
+<body>
+ <div class="titlebar">
+  <img src="/static/img/Logo.jpeg" class="logo"> 
+  <ul>
+    <li><a href="/active_ticket/active_ticket/">ACTIVE TICKET</a></li>
+    <li><a href="/closed_ticket/closed_ticket/">CLOSED TICKET</a></li>
+    <li><a href="/contact/contact/">CONTACT</a></li>
+    <li><a href="/welcome/welcome/">LOGOUT</a></li>
+  </ul>
+ </div>
+ <div class="background"><br><br><br><br><br><br><br><br>
+  <div class="formbox"><br>
+    <center><h2>TICKET SUCCESSFULLY CREATED</h2><br><br></center>
+    {% csrf_token %}
+    {% for item in data %}
+     <p>Dear {{ item.name }}, This is to inform you that your ticket has been successfully created and the issue will be addressed soon. Once the issue is addressed, the ticket will be closed automatically.<br><br><br></p>
+    {% endfor %}
+  </div>
+ </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Speedy Support - Close Ticket </title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/Closeticket.css' %}"></link>
+</head>
+<body>
+  <div class="titlebar">
+    <img src="/static/img/Logo.jpeg" class="logo"> 
+    <ul>
+     <li><a href="/responder/responder/">ACTIVE TICKET</a></li>
+     <li><a href="/welcome/welcome/">HOME</a></li>
+     <li><a href="/contact/contact/">CONTACT</a></li>
+    </ul>
+  </div>
+  <div class="background"><br><br><br><br><br><br><br><br>
+   <div class="formbox"><br>
+    <center><h2>CLOSE AN ACTIVE TICKET</h2></center>
+    <form method="POST" action="{% url 'close_ticket' %}">
+      {% csrf_token %}
+      <p><br><br><label for="ticket" style="font-size: 20px">TICKET DETAILS</label><br></p>
+      <center><select style="font-size: 20px" id="ticket" name="ticket">
+        <option value="0">--select--</option>
+        {% for item in data1 %}
+        <option value="{{ item.ticket }}">{{ item.ticket }}</option>
+        {% endfor %}
+     <p><input style="font-size: 20px" type="submit" value="Submit"></p><br>
+    </form>
+   </div>
+  </div>
+</body>
+</html>

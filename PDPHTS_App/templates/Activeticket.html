@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Speedy Support - Active Ticket </title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/Activeticket.css' %}"></link>
+</head>
+
+<body>
+ <div class="titlebar">
+  <img src="/static/img/Logo.jpeg" class="logo"> 
+  <ul>
+    <li><a href="/openticket/openticket/">OPEN TICKET</a></li>
+    <li><a href="/closed_ticket/closed_ticket/">CLOSED TICKET</a></li>
+    <li><a href="/contact/contact/">CONTACT</a></li>
+    <li><a href="/welcome/welcome/">LOGOUT</a></li>
+  </ul>
+ </div>
+ <div class="background">
+ </div>
+ <div class="center">
+  <div class="formbox"><br>
+   <center><h2>ACTIVE TICKET(S)</h2></center><br>
+   <form method="POST" action="{% url 'active_ticket' %}">
+    {% csrf_token %}
+    {% for item in data1 %}
+     <br><p><label for="topic" style="font-size: 20px">NAME :- {{ item.name }}</label><br></p>
+
+     <p><label for="topic" style="font-size: 20px">EMAIL :- {{ item.email }}</label><br></p>
+
+     <p><label for="topic" style="font-size: 20px">DATE :- {{ item.date }}</label><br></p>
+
+     <p><label for="topic" style="font-size: 20px">TIME :- {{ item.time }}</label><br></p>
+     
+     <p><label for="topic" style="font-size: 20px">HELP TOPIC :- {{ item.topic }}</label><br></p>
+
+     <p><label for="topic" style="font-size: 20px">ISSUE SUMMARY :- {{ item.issue }}</label><br></p>
+
+     <p><label for="topic" style="font-size: 20px">REASON FOR OPENING THE TICKET :- {{ item.reason }}</label><br></p>
+ 
+     <p><label for="topic" style="font-size: 20px">LOCATION :- {{ item.location }}</label><br></p>
+
+     <p><label for="group" style="font-size: 20px">DEPARTMENT / ROOM NUMBER :- {{ item.dept }}</label><br></p>
+ 
+     <p><label for="report" style="font-size: 20px">MOBILE NUMBER :- {{ item.number }}</label><br><br></p>
+
+     <p>---------------------------------------------------------------------------------<br><br></p>
+     {% endfor %}
+    </form>
+  </div>
+ </div>
+</body>
+</html>

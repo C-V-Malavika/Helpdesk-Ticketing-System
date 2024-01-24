@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.background{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.572),rgba(0, 0, 0, 0.572),rgba(0, 0, 0, 0.572),rgba(0, 0, 0, 0.572)),url(/static/img/Contact.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.center{
+    margin:0;
+    position:absolute;
+    color: rgb(255, 255, 255);
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-100%, -50%);
+    height: 500px;
+    width: 450px;
+    background-color: transparent;
+    padding: 30px;
+    padding-right: 50px;
+    box-shadow: 0 10px 15px rgba(255, 255, 255, 0.572);
+}
+
+.titlebar{
+    padding: 30px 5px;
+    height: 50px;
+    width: 1670px;
+    display: inline-flex;
+    align-items: center;
+    background-color: transparent;
+    position: fixed;
+    border-radius: none;
+}
+
+.titlebar ul li{
+    list-style: none;
+    display: inline-flex;
+    text-align: middle;
+    margin: 0 20px;
+    position: relative;
+}
+         
+.titlebar ul li a{
+    text-decoration: none;
+    font-family: 'Calibri';
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    font-size: 22px;
+    transition: 1.0s;
+}
+
+.titlebar ul li a:hover{
+    text-decoration: none;
+    font-family: 'Calibri';
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    transition: 1.0s;
+}
+   
+.titlebar ul li::after{
+    content: '';
+    height: 2.5px;
+    width: 0;
+    background: #90eeff;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 1.0s;
+}
+         
+.titlebar ul li:hover::after{
+    width: 100%
+}
+   
+.icon{
+    height: 40px;
+    width: 45px;
+    border-radius: 10px;
+}
+
+.logo{
+    width: 300px;
+    height: 120px;
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 1200px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.center h1{
+    font-size: 30px;
+    font-weight: 500;
+    font-family: 'Verdana';
+    text-align: center;
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.center p{
+    font-size: 21px;
+    font-weight: 300;
+    font-family: 'Times New Roman';
+    text-align: center;
+}
+
+.map{
+    margin:0;
+    position:absolute;
+    color: rgb(0, 0, 0);
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(50%, -50%);
+    height: 500px;
+    width: 470px;
+    background-color: transparent;
+    padding: 30px;
+    padding-right: 50px;
+}

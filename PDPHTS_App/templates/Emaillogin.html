@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Speedy Support - Login </title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/Login.css' %}"></link>
+</head>
+
+<body>
+ <div class="titlebar">
+  <img src="/static/img/Logo.jpeg" class="logo"> 
+  <ul>
+   <li><a href="/welcome/welcome/">HOME</a></li>
+   <li><a href="/contact/contact/">CONTACT</a></li>
+  </ul>
+ </div>
+ <div class="background">
+ </div>
+ <div class="center">
+  <h2><center>Invalid Email Id!!! Please verify<center></h2><br>
+  <img src="{% static 'img/Login.png' %}" class="login"><br>
+  <form method="POST" action="{% url 'input_login' %}">
+    {% csrf_token %}
+    <label style="font-size: 30px" for="email">Email or Username : </label><br><br>
+     <input style="font-size: 30px" size="30" type="text" id="email" name="email"><br><br><br>
+    <label style="font-size: 30px" for="pass">Password : </label><br><br>
+     <input style="font-size: 30px" size="30" type="password" id="pass" name="pass"><br><br><br><br>
+    <p><input style="font-size: 25px" type="submit" value="Login"></p>
+  </form>
+</div>
+</body>
+</html>

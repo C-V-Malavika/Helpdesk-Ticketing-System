@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Speedy Support - Open Ticket </title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/Openticket.css' %}"></link>
+</head>
+<body>
+  <div class="titlebar">
+    <img src="/static/img/Logo.jpeg" class="logo"> 
+    <ul>
+     <li><a href="/active_ticket/active_ticket/">ACTIVE TICKET</a></li>
+     <li><a href="/closed_ticket/closed_ticket/">CLOSED TICKET</a></li>
+     <li><a href="/contact/contact/">CONTACT</a></li>
+     <li><a href="/welcome/welcome/">LOGOUT</a></li>
+    </ul>
+  </div>
+  <div class="background"><br><br><br><br><br><br><br><br>
+   <div class="formbox"><br>
+    <center><h2>OPEN A NEW TICKET</h2></center>
+
+    <form method="POST" action="{% url 'open_ticket' %}">
+      {% csrf_token %}
+      <p><br><label for="topic" style="font-size: 20px">Help Topic</label><br></p>
+      <center><input style="font-size: 20px" type="text" id="topic" name="topic" placeholder="Help Topic..?"><br><br></center>
+
+      <p><label for="issue" style="font-size: 20px">Issue Summary</label><br></p>
+      <center><input style="font-size: 20px" type="text" id="issue" name="issue" placeholder="Issue Summary..?"><br><br></center>
+
+   
+      <p><label for="problem" style="font-size: 20px">Detail on the reason(s) for opening the ticket</label><br></p>
+      <center><select style="font-size: 20px" id="problem" name="problem">
+        <option value="0">--select--</option>
+        <option value="AC-Problem">AC-Problem</option>
+        <option value="Academic ERP & LMS Related">Academic ERP & LMS Related</option>
+        <option value="Attendance System">Attendance System</option>
+        <option value="Cafeteria">Cafeteria</option>
+        <option value="Carpentery">Carpentery</option>
+        <option value="CCTV & AV problem">CCTV & AV problem</option>
+        <option value="Civil - Mason">Civil - Mason</option>
+        <option value="Electrical">Electrical</option>
+        <option value="House Keeping">House Keeping</option>
+        <option value="Painting, Plumbing">Painting, Plumbing</option>
+        <option value="RO - Problem">RO - Problem</option>
+        <option value="Stores, Table, Chair requisition">Stores, Table, Chair requisition</option>
+        <option value="Telephone - Intercom problem, Wifi - LAN Internet">Telephone - Intercom problem, Wifi - LAN Internet</option>
+        <option value="Transport">Transport</option>
+        <option value="Printer, Scanner, Projector, Desktop, Laptop, UPS-Problem">Printer, Scanner, Projector, Desktop, Laptop, UPS-Problem</option>
+      </select><br><br></center>
+
+      <p><label for="place" style="font-size: 20px">Location</label><br></p>
+      <center><select style="font-size: 20px" id="place" name="place">
+        <option value="0">--select--</option>
+        <option value="Departments">Departments</option>
+        <option value="Gents Hostel">Gents Hostel</option>
+        <option value="Ladies Hostel">Ladies Hostel</option>
+        <option value="Staff Quarters">Staff Quarters</option>
+      </select><br><br></center>
+
+      <p><label for="details" style="font-size: 20px">Department / Hostel Number & Room Number</label><br></p>
+      <center><input style="font-size: 20px" type="text" id="details" name="details" placeholder="Department / Hostel Number & Room Number..?"><br><br></center>
+
+      <p><label for="number" style="font-size: 20px">Mobile Number</label><br></p>
+      <center><input style="font-size: 20px" type="text" id="number" name="number" placeholder="Mobile Number.."><br><br></center>
+
+      <p><input style="font-size: 20px" type="submit" value="Submit"></p><br>
+    </form>
+   </div>
+  </div>
+</body>
+</html>
