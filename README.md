@@ -15,7 +15,7 @@ This system serves as a helpdesk for the students of an institution to ask for t
 
 This system has been developed by implementing the Design Patterns namely Strategy Design Pattern and Command Design Pattern.
 
-The design pattern Strategy is used for creating tickets for different problems. There are 15 categories of problems here:
+There are 15 categories of problems here:
 - AC Problem
 - ERP LMS Problem
 - Attendance Problem
@@ -38,7 +38,7 @@ The design pattern Strategy is used for creating tickets for different problems.
 2. The problem is emailed directly to the respective problem attender.
 3. It is displayed in the current tickets raised section.
 4. Once the problem has been fixed, the problem moves to the closed tickets section.
-5. The student can download the details of the problem from the website. It will be downloaded in the form of a text file.
+5. The student can download the details of the ticket that has been closed from the website. It will be downloaded in the form of a text file.
 
 ### PROBLEM ATTENDER
 
